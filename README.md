@@ -1,46 +1,76 @@
-# Getting Started with Create React App
+# User Dashboard - React.js Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a simple *User Dashboard* built using *React.js*. The dashboard fetches and displays user data and activities from a REST API. The project demonstrates basic React functionality, including component structure, API integration, and responsive design.
 
-## Available Scripts
+## Project Setup
 
-In the project directory, you can run:
+### Prerequisites
 
-### `npm start`
+To run this project, make sure you have the following installed:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- *Node.js*: v14 or later
+- *npm* or *yarn*: For managing dependencies
+- *React*: v17 or later
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Installation
 
-### `npm test`
+1. *Clone the repository:*
+   bash
+   git clone git@github.com:chippySebastian/Dasboard.git
+   
+   
+2. *Navigate to the project folder:*
+   bash
+   cd dashboard
+   
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. *Install dependencies:*
+   bash
+   npm install
+   
 
-### `npm run build`
+4. *Run the project:*
+   bash
+   npm start
+   
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The project will start on http://localhost:3000/ by default.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Pages/Endpoints
 
-### `npm run eject`
+- *Homepage (Dashboard)*: The main dashboard fetches and displays user data and activities.
+  - *Endpoint*: /
+  - *Description*: Displays user profile details and user activities.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- *User Profile Component*: Displays the basic information of a user.
+  - *Data Source*: [jsonplaceholder.typicode.com/users/1](https://jsonplaceholder.typicode.com/users/1)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- *User Activities Component*: Displays a list of activities (posts) for the user.
+  - *Data Source*: [jsonplaceholder.typicode.com/posts?userId=1](https://jsonplaceholder.typicode.com/posts?userId=1)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### API Endpoints
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+We use the following public mock API endpoints from [JSONPlaceholder](https://jsonplaceholder.typicode.com):
 
-## Learn More
+- *User Data*: https://jsonplaceholder.typicode.com/users/1
+  - Fetches user details like name, email, phone, and website.
+  
+- *User Activities*: https://jsonplaceholder.typicode.com/posts?userId=1
+  - Fetches a list of posts (activities) for the user.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Commands
+
+- *Start the development server*: npm start
+- *Build for production*: npm run build
+- *Run ESLint*: npm run lint
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any questions or feedback, feel free to contact the repository owner.
