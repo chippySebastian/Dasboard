@@ -3,6 +3,8 @@ import axios from 'axios';
 import UserProfile from '../components/UserProfile';
 import UserActivities from '../components/UserActivities';
 import { ThreeDots } from 'react-loader-spinner';
+import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // Define TypeScript interfaces for user and activity data
 interface User {
@@ -20,6 +22,7 @@ interface Activity {
 }
 
 const UserDashboard: React.FC = () => {
+const { id } = useParams<{ id: string }>(); 
   const [user, setUser] = useState<User | null>(null);
   const [activities, setActivities] = useState<Activity[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -30,8 +33,8 @@ const UserDashboard: React.FC = () => {
     try {
       setLoading(true);
       const [userResponse, activitiesResponse] = await Promise.all([
-        axios.get<User>('https://jsonplaceholder.typicode.com/users/1'),
-        axios.get<Activity[]>('https://jsonplaceholder.typicode.com/posts?userId=1'),
+        axios.get<User>(`https://jsonplaceholder.typicode.com/users/${id}`),
+        axios.get<Activity[]>(`https://jsonplaceholder.typicode.com/posts`),
       ]);
       setUser(userResponse.data);
       setActivities(activitiesResponse.data);
@@ -70,6 +73,7 @@ const UserDashboard: React.FC = () => {
   // Render UserProfile and UserActivities
   return (
     <div className="user-dashboard">
+         <Link to="/">Go to Admin Dashboard</Link>
       {user && (
         <UserProfile 
           id={user.id} 
@@ -79,7 +83,7 @@ const UserDashboard: React.FC = () => {
           website={user.website} 
         />
       )}
-      <UserActivities activities={activities} />
+      <UserActivities activities={activities} id = {user?.id} />
     </div>
   );
 };
