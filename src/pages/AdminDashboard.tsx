@@ -90,7 +90,7 @@ const AdminDashboard: React.FC = () => {
             style={{
               marginRight: '5px',
               padding: '5px 10px',
-              backgroundColor: currentPage === index + 1 ? 'blue' : 'lightgray',
+              backgroundColor: currentPage === index + 1 ? '#3b5877' : 'lightgray',
               color: 'white',
               border: 'none',
               borderRadius: '3px',
